@@ -26,7 +26,7 @@ public class MedicalTreatmentEntity {
 		this.id = id;
 	}
 
-	// Relacja many to one - od strony dziecka
+	// Relacja many to one - od strony dziecka - jednostronna
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "VISIT_ID")
 	private VisitEntity visit;
