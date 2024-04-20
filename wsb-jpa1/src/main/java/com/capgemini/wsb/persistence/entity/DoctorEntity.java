@@ -34,6 +34,8 @@ public class DoctorEntity {
 	//Relacja dwustronna jeden do wielu od strony dziecka
 	@OneToMany(mappedBy = "doctor")
 	private List<VisitEntity> visitsEntities;
+	@OneToOne(mappedBy = "doctor")
+	private AddressEntity address;
 
 	public Long getId() {
 		return id;

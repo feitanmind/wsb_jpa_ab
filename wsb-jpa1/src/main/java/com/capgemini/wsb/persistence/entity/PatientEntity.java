@@ -29,9 +29,12 @@ public class PatientEntity {
 
 	@Column(nullable = false)
 	private LocalDate dateOfBirth;
-
+	//Relacja jeden do wielu od strony rodzica dwukierunkowa
 	@OneToMany(mappedBy = "patient")
-	private List<PatientEntity> patientEntities;
+	private List<VisitEntity> visits;
+	// Relacja jeden do jednego dwukierunkowa od strony rodzica
+	@OneToOne(mappedBy = "patient")
+	private AddressEntity address;
 
 	public Long getId() {
 		return id;
@@ -89,11 +92,19 @@ public class PatientEntity {
 		this.dateOfBirth = dateOfBirth;
 	}
 
-	public List<PatientEntity> getPatientEntities() {
-		return patientEntities;
+	public List<VisitEntity> getVisits() {
+		return visits;
 	}
 
-	public void setPatientEntities(List<PatientEntity> patientEntities) {
-		this.patientEntities = patientEntities;
+	public void setVisits(List<VisitEntity> visits) {
+		this.visits = visits;
+	}
+
+	public AddressEntity getAddress() {
+		return address;
+	}
+
+	public void setAddress(AddressEntity address) {
+		this.address = address;
 	}
 }
