@@ -1,13 +1,9 @@
 package com.capgemini.wsb.persistence.entity;
 
 import java.time.LocalDate;
+import java.util.List;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "PATIENT")
@@ -33,6 +29,9 @@ public class PatientEntity {
 
 	@Column(nullable = false)
 	private LocalDate dateOfBirth;
+
+	@OneToMany(mappedBy = "patient")
+	private List<PatientEntity> patientEntities;
 
 	public Long getId() {
 		return id;
@@ -90,4 +89,11 @@ public class PatientEntity {
 		this.dateOfBirth = dateOfBirth;
 	}
 
+	public List<PatientEntity> getPatientEntities() {
+		return patientEntities;
+	}
+
+	public void setPatientEntities(List<PatientEntity> patientEntities) {
+		this.patientEntities = patientEntities;
+	}
 }

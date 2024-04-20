@@ -4,6 +4,7 @@ import com.capgemini.wsb.persistence.enums.Specialization;
 
 import javax.persistence.*;
 import java.util.Collection;
+import java.util.List;
 
 @Entity
 @Table(name = "DOCTOR")
@@ -30,6 +31,9 @@ public class DoctorEntity {
 	@Column(nullable = false)
 	@Enumerated(EnumType.STRING)
 	private Specialization specialization;
+	//Relacja dwustronna jeden do wielu od strony dziecka
+	@OneToMany(mappedBy = "doctor")
+	private List<VisitEntity> visitsEntities;
 
 	public Long getId() {
 		return id;
@@ -86,7 +90,12 @@ public class DoctorEntity {
 	public void setSpecialization(Specialization specialization) {
 		this.specialization = specialization;
 	}
-	//Relacja dwustronna jeden do wielu od strony dziecka
-	@OneToMany(mappedBy = "doctor")
-	private Collection<VisitEntity> visitsEntities;
+
+	public List<VisitEntity> getVisitsEntities() {
+		return visitsEntities;
+	}
+
+	public void setVisitsEntities(List<VisitEntity> visitsEntities) {
+		this.visitsEntities = visitsEntities;
+	}
 }
