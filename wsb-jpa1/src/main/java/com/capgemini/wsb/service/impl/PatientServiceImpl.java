@@ -28,7 +28,8 @@ public class PatientServiceImpl implements PatientService {
 
     @Override
     public Long deleteById(Long id) {
-        return 0L;
+        patientDao.delete(id);
+        return id;
     }
 
     @Override
