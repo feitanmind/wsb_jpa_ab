@@ -21,6 +21,8 @@ public class PatientTO {
         this.dataOfBirth = dataOfBirth;
         this.address = address;
         this.visits = visits;
+        this.sex = sex;
+        this.pesel = pesel;
     }
     private Long id;
     private String firstName;
