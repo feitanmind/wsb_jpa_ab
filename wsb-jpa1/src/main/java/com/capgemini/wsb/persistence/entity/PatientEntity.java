@@ -1,5 +1,7 @@
 package com.capgemini.wsb.persistence.entity;
 
+import com.capgemini.wsb.persistence.enums.Sex;
+
 import java.time.LocalDate;
 import java.util.List;
 
@@ -29,6 +31,10 @@ public class PatientEntity {
 
 	@Column(nullable = false)
 	private LocalDate dateOfBirth;
+	@Column(nullable = false, length = 11)
+	private int pesel;
+	@Enumerated(EnumType.STRING)
+	private Sex sex;
 	//Relacja jeden do wielu od strony rodzica dwukierunkowa
 	@OneToMany(mappedBy = "patient", cascade = CascadeType.REMOVE)
 	private List<VisitEntity> visits;
@@ -106,5 +112,21 @@ public class PatientEntity {
 
 	public void setAddress(AddressEntity address) {
 		this.address = address;
+	}
+
+	public int getPesel() {
+		return pesel;
+	}
+
+	public void setPesel(int pesel) {
+		this.pesel = pesel;
+	}
+
+	public Sex getSex() {
+		return sex;
+	}
+
+	public void setSex(Sex sex) {
+		this.sex = sex;
 	}
 }
