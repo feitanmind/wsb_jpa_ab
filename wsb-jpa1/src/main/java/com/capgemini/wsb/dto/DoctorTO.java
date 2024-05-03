@@ -2,6 +2,8 @@ package com.capgemini.wsb.dto;
 
 import com.capgemini.wsb.persistence.enums.Specialization;
 
+import java.util.*;
+
 public class DoctorTO {
     private Long id;
     private String firstName;
@@ -11,6 +13,7 @@ public class DoctorTO {
     private String doctorNumber;
     private Specialization specialization;
     private AddressTO address;
+    private List<VisitTO> visits;
 
     public Long getId() {
         return id;
@@ -74,5 +77,13 @@ public class DoctorTO {
 
     public void setAddress(AddressTO address) {
         this.address = address;
+    }
+
+    public List<VisitTO> getVisits() {
+        return visits;
+    }
+
+    public void setVisits(List<VisitTO> visits) {
+        this.visits = visits;
     }
 }
