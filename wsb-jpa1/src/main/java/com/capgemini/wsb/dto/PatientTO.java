@@ -1,6 +1,7 @@
 package com.capgemini.wsb.dto;
 
 import com.capgemini.wsb.persistence.entity.VisitEntity;
+import com.capgemini.wsb.persistence.enums.Sex;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -9,7 +10,7 @@ import java.util.List;
 
 public class PatientTO {
     public PatientTO(){}
-    public PatientTO(Long id, String firstName, String lastName, String telephoneNumber, String email, String patientNumber, LocalDate dataOfBirth, AddressTO address, List<VisitTO> visits)
+    public PatientTO(Long id, String firstName, String lastName, String telephoneNumber, String email, String patientNumber, LocalDate dataOfBirth, AddressTO address, List<VisitTO> visits, Sex sex, int pesel)
     {
         this.id = id;
         this.firstName = firstName;
@@ -30,6 +31,8 @@ public class PatientTO {
     private LocalDate dataOfBirth;
     private AddressTO address;
     private List<VisitTO> visits;
+    private Sex sex;
+    private int pesel;
 
     public Long getId() {
         return id;
@@ -101,5 +104,21 @@ public class PatientTO {
 
     public void setVisits(List<VisitTO> visits) {
         this.visits = visits;
+    }
+
+    public int getPesel() {
+        return pesel;
+    }
+
+    public void setPesel(int pesel) {
+        this.pesel = pesel;
+    }
+
+    public Sex getSex() {
+        return sex;
+    }
+
+    public void setSex(Sex sex) {
+        this.sex = sex;
     }
 }
