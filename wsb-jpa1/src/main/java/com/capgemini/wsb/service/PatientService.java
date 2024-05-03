@@ -6,5 +6,5 @@ public interface PatientService {
     PatientTO findById(Long id);
     boolean deleteById(Long id);
     PatientTO addPatient(PatientTO patientTO) throws Exception;
-    PatientTO updatePatient(PatientTO patientTO);
+    PatientTO updatePatient(PatientTO patientTO) throws Exception;
 }
