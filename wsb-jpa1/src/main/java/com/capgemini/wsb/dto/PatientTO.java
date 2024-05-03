@@ -7,6 +7,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PatientTO {
+    public PatientTO(){}
+    public PatientTO(Long id, String firstName, String lastName, String telephoneNumber, String email, String patientNumber, LocalTime dataOfBirth, AddressTO address, List<VisitTO> visits)
+    {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.telephoneNumber = telephoneNumber;
+        this.email = email;
+        this.patientNumber = patientNumber;
+        this.dataOfBirth = dataOfBirth;
+        this.address = address;
+        this.visits = visits;
+    }
     private Long id;
     private String firstName;
     private String lastName;
