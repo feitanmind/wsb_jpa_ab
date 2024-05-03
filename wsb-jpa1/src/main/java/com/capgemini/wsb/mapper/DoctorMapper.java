@@ -25,4 +25,17 @@ public final class DoctorMapper {
         return  new DoctorTO(doctorEntity.getId(),doctorEntity.getFirstName(),doctorEntity.getLastName(),doctorEntity.getTelephoneNumber(), doctorEntity.getEmail(), doctorEntity.getDoctorNumber(), doctorEntity.getSpecialization(),AddressMapper.mapToTO(doctorEntity.getAddress()) ,visits);
 
     }
+    public static DoctorEntity MapToDoctorEntity(DoctorTO doctorTO)
+    {
+        if(doctorTO == null) return null;
+        DoctorEntity doctorEntity = new DoctorEntity();
+        doctorEntity.setId(doctorTO.getId());
+        doctorEntity.setFirstName(doctorTO.getFirstName());
+        doctorEntity.setLastName(doctorTO.getLastName());
+        doctorEntity.setTelephoneNumber(doctorTO.getTelephoneNumber());
+        doctorEntity.setEmail(doctorTO.getEmail());
+        doctorEntity.setDoctorNumber(doctorTO.getDoctorNumber());
+        doctorEntity.setSpecialization(doctorTO.getSpecialization());
+        return doctorEntity;
+    }
 }
