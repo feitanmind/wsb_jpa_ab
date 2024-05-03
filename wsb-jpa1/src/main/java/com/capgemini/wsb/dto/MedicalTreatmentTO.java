@@ -2,6 +2,7 @@ package com.capgemini.wsb.dto;
 
 import com.capgemini.wsb.persistence.enums.TreatmentType;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MedicalTreatmentTO {
