@@ -15,7 +15,7 @@ public final class DoctorMapper {
         if(doctorEntity == null) return null;
         if(isChild)
         {
-            return  new DoctorTO(doctorEntity.getId(),doctorEntity.getFirstName(),doctorEntity.getLastName(),doctorEntity.getTelephoneNumber(), doctorEntity.getEmail(), doctorEntity.getDoctorNumber(), doctorEntity.getSpecialization(),AddressMapper.mapToTO(doctorEntity.getAddress()) ,new ArrayList<>())
+            return  new DoctorTO(doctorEntity.getId(),doctorEntity.getFirstName(),doctorEntity.getLastName(),doctorEntity.getTelephoneNumber(), doctorEntity.getEmail(), doctorEntity.getDoctorNumber(), doctorEntity.getSpecialization(),AddressMapper.mapToTO(doctorEntity.getAddress()) ,new ArrayList<>());
         }
         List<VisitTO> visits = new ArrayList<>();
         for(VisitEntity visit : doctorEntity.getVisitsEntities())
