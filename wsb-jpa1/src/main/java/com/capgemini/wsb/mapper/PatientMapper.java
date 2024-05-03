@@ -34,6 +34,8 @@ public final class PatientMapper {
         patientEntity.setTelephoneNumber(patentTO.getTelephoneNumber());
         patientEntity.setEmail(patentTO.getEmail());
         patientEntity.setPatientNumber(patentTO.getPatientNumber());
+        patientEntity.setSex(patentTO.getSex());
+        patientEntity.setPesel(patentTO.getPesel());
         return  patientEntity;
     }
 }
