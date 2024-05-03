@@ -2,13 +2,14 @@ package com.capgemini.wsb.dto;
 
 import com.capgemini.wsb.persistence.entity.VisitEntity;
 
+import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
 public class PatientTO {
     public PatientTO(){}
-    public PatientTO(Long id, String firstName, String lastName, String telephoneNumber, String email, String patientNumber, LocalTime dataOfBirth, AddressTO address, List<VisitTO> visits)
+    public PatientTO(Long id, String firstName, String lastName, String telephoneNumber, String email, String patientNumber, LocalDate dataOfBirth, AddressTO address, List<VisitTO> visits)
     {
         this.id = id;
         this.firstName = firstName;
@@ -26,7 +27,7 @@ public class PatientTO {
     private String telephoneNumber;
     private String email;
     private String patientNumber;
-    private LocalTime dataOfBirth;
+    private LocalDate dataOfBirth;
     private AddressTO address;
     private List<VisitTO> visits;
 
@@ -78,11 +79,11 @@ public class PatientTO {
         this.patientNumber = patientNumber;
     }
 
-    public LocalTime getDataOfBirth() {
+    public LocalDate getDataOfBirth() {
         return dataOfBirth;
     }
 
-    public void setDataOfBirth(LocalTime dataOfBirth) {
+    public void setDataOfBirth(LocalDate dataOfBirth) {
         this.dataOfBirth = dataOfBirth;
     }
 
