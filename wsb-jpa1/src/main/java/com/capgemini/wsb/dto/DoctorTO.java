@@ -5,6 +5,19 @@ import com.capgemini.wsb.persistence.enums.Specialization;
 import java.util.*;
 
 public class DoctorTO {
+    public DoctorTO(){}
+    public DoctorTO(Long id, String firstName, String lastName, String telephoneNumber, String email, String doctorNumber, Specialization specialization, AddressTO address, List<VisitTO> visits)
+    {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.telephoneNumber = telephoneNumber;
+        this.email = email;
+        this.doctorNumber = doctorNumber;
+        this.specialization = specialization;
+        this.address = address;
+        this.visits = visits;
+    }
     private Long id;
     private String firstName;
     private String lastName;
