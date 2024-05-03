@@ -17,6 +17,7 @@ public final class VisitMapper {
         visitEntity.setDescription(visitTO.getDescription());
         visitEntity.setTime(visitTO.getTime());
         return visitEntity;
+
     }
 
 }
