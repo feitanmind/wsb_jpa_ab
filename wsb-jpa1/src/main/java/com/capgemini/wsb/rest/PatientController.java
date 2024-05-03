@@ -1,11 +1,11 @@
 package com.capgemini.wsb.rest;
 
 import com.capgemini.wsb.dto.PatientTO;
+import com.capgemini.wsb.mapper.PatientMapper;
+import com.capgemini.wsb.persistence.entity.PatientEntity;
 import com.capgemini.wsb.rest.exception.EntityNotFoundException;
 import com.capgemini.wsb.service.PatientService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class PatientController {
@@ -21,5 +21,14 @@ public class PatientController {
             return patient;
         }
         throw new EntityNotFoundException(id);
+    }
+    @DeleteMapping("/patient/{id}")
+    String deleteById(@PathVariable("id") Long id) {
+        return  patientService.deleteById(id) ? "Deleted" : "Not Deleted";
+    }
+    @PostMapping("/patient/add")
+    PatientTO addPatient(@RequestBody PatientTO patient) throws Exception {
+        patientService.addPatient(patient);
+        return patient;
     }
 }

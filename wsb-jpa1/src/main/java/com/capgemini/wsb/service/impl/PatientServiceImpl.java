@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 
 @Service
-@Transactional
+
 public class PatientServiceImpl implements PatientService {
     private final PatientDao patientDao;
     @Autowired
@@ -27,9 +27,16 @@ public class PatientServiceImpl implements PatientService {
     }
 
     @Override
-    public Long deleteById(Long id) {
-        patientDao.delete(id);
-        return id;
+    public boolean deleteById(Long id) {
+        try{
+            PatientEntity patient = patientDao.findOne(id);
+            patientDao.delete(patient);
+            return true;
+        }
+        catch(Exception e){
+            return false;
+        }
+
     }
 
     @Override
