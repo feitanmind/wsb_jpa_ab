@@ -48,11 +48,11 @@ VALUES (4, 'Badanie laryngologiczne', '2024-05-03 15:30:00', 4, 1);
 INSERT INTO visit (id, description, time, patient_id, doctor_id)
 VALUES (5, 'Kontrolna wizyta stomatologiczna', '2024-05-03 16:00:00', 1, 4);
 INSERT INTO visit (id, description, time, patient_id, doctor_id)
-VALUES (6, 'Pobranie krwi', '2023-07-24 12:02', 3, 1);
+VALUES (6, 'Pobranie krwi', '2023-07-24 12:02:00', 3, 1);
 INSERT INTO visit (id, description, time, patient_id, doctor_id)
-VALUES (7, 'Badanie kontrolne', '2024-06-26 10:32', 1, 3);
+VALUES (7, 'Badanie kontrolne', '2024-06-26 10:32:00', 1, 3);
 INSERT INTO visit (id, description, time, patient_id, doctor_id)
-VALUES (8, 'Szczepienie', '2024-12-15 15:54', 2, 4);
+VALUES (8, 'Szczepienie', '2024-12-15 15:54:00', 2, 4);
 
 -- Inserty do medical treatment
 INSERT INTO medical_treatment (id, description, type, visit_id)
