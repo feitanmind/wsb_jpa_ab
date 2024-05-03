@@ -30,10 +30,10 @@ public class PatientEntity {
 	@Column(nullable = false)
 	private LocalDate dateOfBirth;
 	//Relacja jeden do wielu od strony rodzica dwukierunkowa
-	@OneToMany(mappedBy = "patient")
+	@OneToMany(mappedBy = "patient", cascade = CascadeType.REMOVE)
 	private List<VisitEntity> visits;
 	// Relacja jeden do jednego dwukierunkowa od strony rodzica
-	@OneToOne(mappedBy = "patient")
+	@OneToOne(mappedBy = "patient", cascade = CascadeType.REMOVE)
 	private AddressEntity address;
 
 	public Long getId() {

@@ -33,9 +33,9 @@ public class DoctorEntity {
 	@Enumerated(EnumType.STRING)
 	private Specialization specialization;
 	//Relacja dwustronna jeden do wielu od strony dziecka
-	@OneToMany(mappedBy = "doctor")
+	@OneToMany(mappedBy = "doctor", cascade = CascadeType.REMOVE)
 	private List<VisitEntity> visitsEntities;
-	@OneToOne(mappedBy = "doctor")
+	@OneToOne(mappedBy = "doctor", cascade = CascadeType.REMOVE)
 	private AddressEntity address;
 
 	public Long getId() {
