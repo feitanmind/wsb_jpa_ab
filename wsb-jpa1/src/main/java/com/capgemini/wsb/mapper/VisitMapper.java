@@ -28,6 +28,8 @@ public final class VisitMapper {
         visitEntity.setId(visitTO.getId());
         visitEntity.setDescription(visitTO.getDescription());
         visitEntity.setTime(visitTO.getTime());
+        visitEntity.setDoctor(DoctorMapper.MapToDoctorEntity(visitTO.getDoctor()));
+        visitEntity.setPatient(PatientMapper.MapToPatientEntity(visitTO.getPatient()));
         return visitEntity;
 
     }
