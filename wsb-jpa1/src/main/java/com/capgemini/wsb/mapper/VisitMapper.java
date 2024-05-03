@@ -1,13 +1,15 @@
 package com.capgemini.wsb.mapper;
 
 import com.capgemini.wsb.dto.VisitTO;
+import com.capgemini.wsb.persistence.dao.AddressDao;
+import com.capgemini.wsb.persistence.dao.impl.AddressDaoImpl;
 import com.capgemini.wsb.persistence.entity.VisitEntity;
 
 public final class VisitMapper {
     public static VisitTO MapToVisitTO(final VisitEntity visitEntity)
     {
         if(visitEntity == null) return null;
-        return new VisitTO(visitEntity.getId(),visitEntity.getDescription(), visitEntity.getTime());
+        return new VisitTO(visitEntity.getId(),visitEntity.getDescription(), visitEntity.getTime(), visitEntity.getPatient().getId(),visitEntity.getDoctor().getId());
     }
     public static VisitEntity MapToVisitEntity(final VisitTO visitTO)
     {
