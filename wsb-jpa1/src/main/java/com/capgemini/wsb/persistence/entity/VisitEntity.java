@@ -1,7 +1,11 @@
 package com.capgemini.wsb.persistence.entity;
 
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
 import java.time.LocalDateTime;
+import java.util.Collection;
 
 import javax.persistence.*;
 
@@ -24,6 +28,10 @@ public class VisitEntity {
 	// Relacja wiele do jednego dwustronna od strony dziecka
 	@ManyToOne
 	private PatientEntity patient;
+	@Fetch(FetchMode.JOIN)
+	@OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+	@JoinColumn(name = "VISIT_ID")
+	private Collection<MedicalTreatmentEntity> medicalTreatments;
 
 	public Long getId() {
 		return id;
@@ -63,5 +71,13 @@ public class VisitEntity {
 
 	public void setDoctor(DoctorEntity doctor) {
 		this.doctor = doctor;
+	}
+
+	public Collection<MedicalTreatmentEntity> getMedicalTreatments() {
+		return medicalTreatments;
+	}
+
+	public void setMedicalTreatments(Collection<MedicalTreatmentEntity> medicalTreatments) {
+		this.medicalTreatments = medicalTreatments;
 	}
 }

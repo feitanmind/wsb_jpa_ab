@@ -36,10 +36,10 @@ public class PatientEntity {
 	@Enumerated(EnumType.STRING)
 	private Sex sex;
 	//Relacja jeden do wielu od strony rodzica dwukierunkowa
-	@OneToMany(mappedBy = "patient", cascade = CascadeType.REMOVE)
+	@OneToMany(mappedBy = "patient", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private List<VisitEntity> visits;
-	// Relacja jeden do jednego dwukierunkowa od strony rodzica
-	@OneToOne(mappedBy = "patient", cascade = CascadeType.REMOVE)
+	// Relacja jeden do jednego jednokierunkowa od strony rodzica
+	@OneToOne(mappedBy = "patient",fetch = FetchType.LAZY, cascade = CascadeType.ALL, optional = false)
 	private AddressEntity address;
 
 	public Long getId() {

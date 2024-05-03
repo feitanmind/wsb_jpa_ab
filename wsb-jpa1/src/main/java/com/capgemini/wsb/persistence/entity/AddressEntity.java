@@ -21,7 +21,6 @@ public class AddressEntity {
 	// Relacja jeden do jednego od strony dziecka dwukierunkowa
 	@OneToOne
 	private DoctorEntity doctor;
-	// Relacja jeden do jednego od strony dziecka dwukierunkowa
 	@OneToOne
 	private PatientEntity patient;
 
