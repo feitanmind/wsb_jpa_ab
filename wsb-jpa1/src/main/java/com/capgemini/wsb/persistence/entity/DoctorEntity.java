@@ -101,4 +101,12 @@ public class DoctorEntity {
 	public void setVisitsEntities(List<VisitEntity> visitsEntities) {
 		this.visitsEntities = visitsEntities;
 	}
+
+	public AddressEntity getAddress() {
+		return address;
+	}
+
+	public void setAddress(AddressEntity address) {
+		this.address = address;
+	}
 }
