@@ -1,21 +1,23 @@
 package com.capgemini.wsb.dto;
 
+import com.capgemini.wsb.persistence.dao.DoctorDao;
+
 import java.time.LocalDateTime;
 
 public class VisitTO {
     private Long id;
     private String description;
     private LocalDateTime time;
-    private Long patientId;
-    private Long doctorId;
-
-    public VisitTO(Long id, String description, LocalDateTime time, Long patientId, Long doctorId)
+    private DoctorTO doctor;
+    private PatientTO patient;
+    public VisitTO(){}
+    public VisitTO(Long id, String description, LocalDateTime time, DoctorTO doctor, PatientTO patient)
     {
         this.id = id;
         this.description = description;
         this.time = time;
-        this.patientId = patientId;
-        this.doctorId = doctorId;
+        this.doctor = doctor;
+        this.patient = patient;
     }
 
     public Long getId() {
@@ -42,19 +44,19 @@ public class VisitTO {
         this.time = time;
     }
 
-    public Long getPatientId() {
-        return patientId;
+    public DoctorTO getDoctor() {
+        return doctor;
     }
 
-    public void setPatientId(Long patientId) {
-        this.patientId = patientId;
+    public void setDoctor(DoctorTO doctor) {
+        this.doctor = doctor;
     }
 
-    public Long getDoctorId() {
-        return doctorId;
+    public PatientTO getPatient() {
+        return patient;
     }
 
-    public void setDoctorId(Long doctorId) {
-        this.doctorId = doctorId;
+    public void setPatient(PatientTO patient) {
+        this.patient = patient;
     }
 }
