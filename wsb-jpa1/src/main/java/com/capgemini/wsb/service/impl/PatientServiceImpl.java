@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 
 @Service
-
+@Transactional
 public class PatientServiceImpl implements PatientService {
     private final PatientDao patientDao;
     @Autowired
@@ -42,8 +42,7 @@ public class PatientServiceImpl implements PatientService {
     @Override
     public PatientTO addPatient(PatientTO patientTO) throws Exception {
         if(patientTO == null) throw new Exception("Patient cannot be null");
-        final PatientEntity patientEntity = PatientMapper.MapToPatientEntity(patientTO);
-        patientDao.save(patientEntity);
+        patientDao.save(PatientMapper.MapToPatientEntity(patientTO));
         return patientTO;
     }
 
