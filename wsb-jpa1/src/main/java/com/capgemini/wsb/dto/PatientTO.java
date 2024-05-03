@@ -10,7 +10,7 @@ import java.util.List;
 
 public class PatientTO {
     public PatientTO(){}
-    public PatientTO(Long id, String firstName, String lastName, String telephoneNumber, String email, String patientNumber, LocalDate dataOfBirth, AddressTO address, List<VisitTO> visits, Sex sex, int pesel)
+    public PatientTO(Long id, String firstName, String lastName, String telephoneNumber, String email, String patientNumber, LocalDate dataOfBirth, AddressTO address, List<VisitTO> visits, Sex sex, Long pesel)
     {
         this.id = id;
         this.firstName = firstName;
@@ -32,7 +32,7 @@ public class PatientTO {
     private AddressTO address;
     private List<VisitTO> visits;
     private Sex sex;
-    private int pesel;
+    private Long pesel;
 
     public Long getId() {
         return id;
@@ -106,11 +106,11 @@ public class PatientTO {
         this.visits = visits;
     }
 
-    public int getPesel() {
+    public Long getPesel() {
         return pesel;
     }
 
-    public void setPesel(int pesel) {
+    public void setPesel(Long pesel) {
         this.pesel = pesel;
     }
 

@@ -32,7 +32,7 @@ public class PatientEntity {
 	@Column(nullable = false)
 	private LocalDate dateOfBirth;
 	@Column(nullable = false, length = 11)
-	private int pesel;
+	private Long pesel;
 	@Enumerated(EnumType.STRING)
 	private Sex sex;
 	//Relacja jeden do wielu od strony rodzica dwukierunkowa
@@ -114,11 +114,11 @@ public class PatientEntity {
 		this.address = address;
 	}
 
-	public int getPesel() {
+	public Long getPesel() {
 		return pesel;
 	}
 
-	public void setPesel(int pesel) {
+	public void setPesel(Long pesel) {
 		this.pesel = pesel;
 	}
 
