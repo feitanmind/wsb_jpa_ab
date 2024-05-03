@@ -15,14 +15,14 @@ public final class PatientMapper {
         if(patientEntity == null) return null;
         if(isChild)
         {
-            return new PatientTO(patientEntity.getId(),patientEntity.getFirstName(),patientEntity.getLastName(),patientEntity.getTelephoneNumber(),patientEntity.getEmail(), patientEntity.getPatientNumber(), patientEntity.getDateOfBirth(),AddressMapper.mapToTO(patientEntity.getAddress()), new ArrayList<>());
+            return new PatientTO(patientEntity.getId(),patientEntity.getFirstName(),patientEntity.getLastName(),patientEntity.getTelephoneNumber(),patientEntity.getEmail(), patientEntity.getPatientNumber(), patientEntity.getDateOfBirth(),AddressMapper.mapToTO(patientEntity.getAddress()), new ArrayList<>(),patientEntity.getSex(),patientEntity.getPesel());
         }
         List<VisitTO> visits = new ArrayList<>();
         for(VisitEntity visitEntity : patientEntity.getVisits())
         {
             visits.add(VisitMapper.MapToVisitTO(visitEntity,true));
         }
-        return new PatientTO(patientEntity.getId(),patientEntity.getFirstName(),patientEntity.getLastName(),patientEntity.getTelephoneNumber(),patientEntity.getEmail(), patientEntity.getPatientNumber(), patientEntity.getDateOfBirth(),AddressMapper.mapToTO(patientEntity.getAddress()), visits);
+        return new PatientTO(patientEntity.getId(),patientEntity.getFirstName(),patientEntity.getLastName(),patientEntity.getTelephoneNumber(),patientEntity.getEmail(), patientEntity.getPatientNumber(), patientEntity.getDateOfBirth(),AddressMapper.mapToTO(patientEntity.getAddress()), visits, patientEntity.getSex(), patientEntity.getPesel());
     }
     public static PatientEntity MapToPatientEntity(PatientTO patentTO)
     {
