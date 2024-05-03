@@ -5,5 +5,6 @@ import com.capgemini.wsb.dto.VisitTO;
 import java.util.*;
 
 public interface VisitService {
-    List<VisitTO> getAllVisits();
+    //List<VisitTO> getAllVisits();
+    VisitTO getVisitById(Long id);
 }
