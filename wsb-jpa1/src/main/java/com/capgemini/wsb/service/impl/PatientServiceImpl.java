@@ -33,12 +33,18 @@ public class PatientServiceImpl implements PatientService {
     }
 
     @Override
-    public PatientTO addPatient(PatientTO patientTO) {
-        return null;
+    public PatientTO addPatient(PatientTO patientTO) throws Exception {
+        if(patientTO == null) throw new Exception("Patient cannot be null");
+        final PatientEntity patientEntity = PatientMapper.MapToPatientEntity(patientTO);
+        patientDao.save(patientEntity);
+        return patientTO;
     }
 
     @Override
     public PatientTO updatePatient(PatientTO patientTO) {
-        return null;
+        PatientEntity patientEntity = patientDao.findOne(patientTO.getId());
+        PatientEntity patientUpdated = PatientMapper.MapToPatientEntity(patientTO);
+        patientDao.update(patientUpdated);
+        return patientTO;
     }
 }
