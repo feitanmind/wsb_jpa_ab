@@ -44,9 +44,23 @@ public class PatientDaoTest {
     {
         //given
         final int numberOfVisits = 2;
+        final int expectedNumberOfPatients = 3;
         //when
-        List<PatientEntity> listOfUsers = patientDao.getPatientsWithMoreThanXVisits(numberOfVisits);
+        List<PatientEntity> listOfPatients = patientDao.getPatientsWithMoreThanXVisits(numberOfVisits);
         //then
-        assertEquals(3, listOfUsers.size());
+        assertEquals(expectedNumberOfPatients, listOfPatients.size());
+    }
+    @Transactional
+    @Test
+    @Description("Lab3/Zad4 Znajdz pacjentow po dodanym przez Ciebie polu - nie wyszukuj wprost po wartosci, uzyj zapytania typu wieksze/mniejsze/pozniej/wczesniej/zawiera, w zaleznosci od wybranego typu zmiennej.")
+    public void testShouldReturnListOfPatientsWithLessPeselNumber()
+    {
+        //given
+        final Long peselFilter = 90000000000L;
+        final int expectedNumberOfPatients = 3;
+        // when
+        List<PatientEntity> listOfPatients = patientDao.getPatientsWithPeselLessThanX(peselFilter);
+        //then
+        assertEquals(expectedNumberOfPatients, listOfPatients.size());
     }
 }

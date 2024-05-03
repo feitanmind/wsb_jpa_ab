@@ -18,4 +18,6 @@ public interface PatientDao extends Dao<PatientEntity, Long>{
      * @return
      */
     List<PatientEntity> getPatientsWithMoreThanXVisits(int x);
+
+    List<PatientEntity> getPatientsWithPeselLessThanX(Long x);
 }

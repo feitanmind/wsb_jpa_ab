@@ -23,4 +23,13 @@ public class PatientDaoImpl extends AbstractDao<PatientEntity, Long> implements 
                 .setParameter("x",x)
                 .getResultList();
     }
+
+    @Override
+    public List<PatientEntity> getPatientsWithPeselLessThanX(Long x) {
+        return entityManager.createQuery("SELECT u FROM PatientEntity u WHERE u.pesel < :x",PatientEntity.class)
+                .setParameter("x",x)
+                .getResultList();
+    }
+
+
 }
