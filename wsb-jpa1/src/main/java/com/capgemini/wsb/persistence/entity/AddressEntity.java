@@ -9,13 +9,13 @@ public class AddressEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	@Column(nullable = false)
+	@Column(nullable = false, length = 39)
 	private String city;
 	@Column(nullable = false)
 	private String addressLine1;
 	@Column(nullable = true)
 	private String addressLine2;
-	@Column(nullable = false)
+	@Column(nullable = false, length = 10)
 	private String postalCode;
 
 	// Relacja jeden do jednego od strony dziecka dwukierunkowa

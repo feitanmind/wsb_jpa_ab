@@ -13,13 +13,13 @@ public class PatientEntity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@Column(nullable = false)
+	@Column(nullable = false, length = 46)
 	private String firstName;
 
-	@Column(nullable = false)
+	@Column(nullable = false, length = 46)
 	private String lastName;
 
-	@Column(nullable = false)
+	@Column(nullable = false, length = 16)
 	private String telephoneNumber;
 	@Column(nullable = true)
 	private String email;
