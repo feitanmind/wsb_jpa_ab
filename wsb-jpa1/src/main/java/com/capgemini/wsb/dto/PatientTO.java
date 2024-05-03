@@ -10,6 +10,7 @@ public class PatientTO {
     private String email;
     private String patientNumber;
     private LocalTime dataOfBirth;
+    private AddressTO address;
 
     public Long getId() {
         return id;
@@ -65,5 +66,13 @@ public class PatientTO {
 
     public void setDataOfBirth(LocalTime dataOfBirth) {
         this.dataOfBirth = dataOfBirth;
+    }
+
+    public AddressTO getAddress() {
+        return address;
+    }
+
+    public void setAddress(AddressTO address) {
+        this.address = address;
     }
 }
