@@ -22,7 +22,8 @@ public class PatientServiceImpl implements PatientService {
     @Override
     public PatientTO findById(Long id) {
         final PatientEntity patientEntity = patientDao.findOne(id);
-        return PatientMapper.MapToPatientTO(patientEntity,false);
+        PatientTO patientTO = PatientMapper.MapToPatientTO(patientEntity,false);
+        return patientTO;
     }
 
     @Override
