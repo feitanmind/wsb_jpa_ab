@@ -9,14 +9,14 @@ INSERT INTO doctor (id, first_name, last_name, telephone_number, email, doctor_n
 VALUES (4, 'Katarzyna', 'Zielińska', '+48 789 456 123', 'katarzyna.zielinska@example.com', '123456', 'OCULIST');
 
 -- Insert do pacjentów
-INSERT INTO patient (id, first_name, last_name, telephone_number, email, patient_number, date_of_birth)
-VALUES (1, 'Zuzanna', 'Szymańska', '+48 432 109 876', 'zuzanna.szymanska@example.com', '1234567890', '2000-01-01');
-INSERT INTO patient (id, first_name, last_name, telephone_number, email, patient_number, date_of_birth)
-VALUES (2, 'Bartosz', 'Kamiński', '+48 654 987 321', 'bartosz.kaminski@example.com', '9876543210', '1985-05-15');
-INSERT INTO patient (id, first_name, last_name, telephone_number, email, patient_number, date_of_birth)
-VALUES (3, 'Magdalena', 'Nowakowska', '+48 210 543 789', 'magdalena.nowakowska@example.com', '6543219870', '1970-12-31');
-INSERT INTO patient (id, first_name, last_name, telephone_number, email, patient_number, date_of_birth)
-VALUES (4, 'Mateusz', 'Wojciechowski', '+48 876 321 098', 'mateusz.wojciechowski@example.com', '3210987654', '1995-07-10');
+INSERT INTO patient (id, first_name, last_name, telephone_number, email, patient_number, date_of_birth, sex, pesel)
+VALUES (1, 'Zuzanna', 'Szymańska', '+48 432 109 876', 'zuzanna.szymanska@example.com', '1234567890', '2000-01-01','FEMALE',00010123122);
+INSERT INTO patient (id, first_name, last_name, telephone_number, email, patient_number, date_of_birth, sex, pesel)
+VALUES (2, 'Bartosz', 'Kamiński', '+48 654 987 321', 'bartosz.kaminski@example.com', '9876543210', '1985-05-15','MALE',85051509832);
+INSERT INTO patient (id, first_name, last_name, telephone_number, email, patient_number, date_of_birth, sex, pesel)
+VALUES (3, 'Magdalena', 'Nowakowska', '+48 210 543 789', 'magdalena.nowakowska@example.com', '6543219870', '1970-12-31','OTHER',70123107654);
+INSERT INTO patient (id, first_name, last_name, telephone_number, email, patient_number, date_of_birth, sex, pesel)
+VALUES (4, 'Mateusz', 'Wojciechowski', '+48 876 321 098', 'mateusz.wojciechowski@example.com', '3210987654', '1995-07-10','MALE',95071039432);
 
 --Inserty do adresów
 INSERT INTO address (id, address_line1, address_line2, city, postal_code, doctor_id)
